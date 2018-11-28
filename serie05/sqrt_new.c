@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 
-double sqrtNew(unsigned int x, double tau)
+double sqrtNew(double x, double tau)
 {
     double x1 = 1./2*(1+x);
     double x2 = 1./2*(x1+x/x1);
@@ -16,10 +17,11 @@ double sqrtNew(unsigned int x, double tau)
 
 
 int main() {
-    unsigned int x;
+    double x;
     double tau;
     printf("x = ");
-    scanf("%d",&x);
+    scanf("%lf",&x);
+assert(x > 0);
     printf("\ntau = ");
     scanf("%lf", &tau);
 	double wert = sqrtNew(x,tau);

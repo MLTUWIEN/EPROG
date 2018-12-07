@@ -38,7 +38,7 @@ double diff(double (*f)(double), double x, double h0, double tau) {
         h0 *= 0.5;
         h1 = (f(x + h0) - f(x)) / h0;
 
-    } while ((fabs(h - h1 > tau) || fabs(h) > tau)
+    } while ((fabs(h - h1) > tau || fabs(h) > tau)
              && fabs(h - h1) > tau * fabs(h));
     return h;
 }

@@ -1,4 +1,4 @@
-#include "../matrixvector/dynamicmatrix.h"
+#include "dynamicmatrix.h"
 
 int main()
 {

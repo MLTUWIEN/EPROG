@@ -17,7 +17,8 @@ int main()
 
     printf("Einlesen von p:\n");
     p = scanPoly();
-    printf("Einlesen von p:\n");
+
+    printf("Einlesen von q:\n");
     q = scanPoly();
     r = NULL;
 

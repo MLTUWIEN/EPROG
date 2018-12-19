@@ -2,7 +2,7 @@
 
 
 polynomial* newPoly(int degr){
-    polynomial* poly = malloc(sizeof(polynomial*));
+    polynomial* poly = malloc(sizeof(polynomial));
     int i = 0;
 
     assert(poly != NULL);
@@ -142,8 +142,8 @@ double diffEvalPoly(polynomial* p, int k, double x){
 
     for(i = k; i <= getPolyDegr(p); i++){
         coef = getPolyCoef(p, i);
-        for(j = i; j < i + k; j++){
-            coef *= j - 1;
+        for(j = i; j > i - k; j--){
+            coef *= j;
         }
         f += coef * pow(x, i - k);
     }

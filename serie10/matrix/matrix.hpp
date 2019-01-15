@@ -1,0 +1,41 @@
+//
+// Created by markus on 15.01.2019.
+//
+
+#ifndef MATRIX_MATRIX_HPP
+#define MATRIX_MATRIX_HPP
+
+#include <iostream>
+#include <cassert>
+#include <ctime>
+#include <cstdlib>
+#include "vector.hpp"
+
+class Matrix {
+private:
+    int dim;
+    char type;
+    double* coeff;
+
+public:
+    Matrix ();
+    Matrix (char type, int dim, double fill = 0);
+    Matrix (char type, int dim, double lb, double ub);
+    Matrix (const Matrix& orig);
+    ~Matrix ();
+    Matrix& operator=(const Matrix& rhs);
+
+    int getDimension() const;
+    char getType() const;
+    double getCoefficient(int j, int k) const;
+    void setCoefficient(int j, int k, double x);
+
+    void scanMatrix(char type, int n);
+    void printMatrix() const;
+    double columnSumNorm() const;
+    double rowSumNorm() const;
+};
+
+const Vector operator*(const Matrix& m, const Vector& v);
+
+#endif //MATRIX_MATRIX_HPP
